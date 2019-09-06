@@ -2,7 +2,7 @@
 
 set -ex
 
-CPPFLAGS="-I$PREFIX/include" LDFLAGS="-L$PREFIX/lib" make -j $CPU_COUNT CXX=icpc multi
+CPPFLAGS="-I$PREFIX/include" LDFLAGS="-L$PREFIX/lib" make -j $CPU_COUNT multi
 
 mkdir -p "$PREFIX/bin"
 cp bwa-mem2 "$PREFIX/bin/"
