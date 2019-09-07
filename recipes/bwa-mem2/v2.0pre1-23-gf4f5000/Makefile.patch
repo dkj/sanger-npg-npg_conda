@@ -22,16 +22,3 @@ index 9f51af0..823a60f 100644
  
  .PHONY:all clean depend multi
  .SUFFIXES:.cpp .o
-diff --git a/src/main.cpp b/src/main.cpp
-index 31e5cb4..f61506d 100644
---- a/src/main.cpp
-+++ b/src/main.cpp
-@@ -34,7 +34,7 @@ Authors: Vasimuddin Md <vasimuddin.md@intel.com>; Sanchit Misra <sanchit.misra@i
- #include "main.h"
- 
- #ifndef PACKAGE_VERSION
--#define PACKAGE_VERSION "2.0pre1"
-+#define PACKAGE_VERSION "2.0pre1-23-gf4f5000"
- #endif
- 
- 
