@@ -21,8 +21,9 @@ jobs:
 
       - name: "Install dependencies"
         run: |
-          python -m pip install --upgrade pip setuptools wheel
-          pip install -r ./requirements.txt
+          $CONDA/bin/conda install conda-build pip
+          $CONDA/bin/python -m pip install --upgrade pip setuptools wheel
+          $CONDA/bin/pip install -r ./requirements.txt
 
       - name: "Configure git"
         run: |
@@ -42,8 +43,8 @@ jobs:
           mkdir -p "$GITHUB_WORKSPACE/conda-artefacts/linux-64"
           while sleep 300; do echo $SECONDS sec elapsed, still building ... ; done &
 
-          ./bin/recipebook --changes "$COMPARE_BRANCH" recipes | \
-            ./bin/build \
+          $CONDA/bin/recipebook --changes "$COMPARE_BRANCH" recipes | \
+            $CONDA/bin/build \
             --recipes-dir "$GITHUB_WORKSPACE" \
             --artefacts-dir "$GITHUB_WORKSPACE/conda-artefacts" \
             --conda-build-image "$CONDA_IMAGE" \
