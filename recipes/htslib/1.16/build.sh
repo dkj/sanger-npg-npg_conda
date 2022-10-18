@@ -6,6 +6,11 @@ n="$CPU_COUNT"
 
 pushd htslib
 
+git fetch --tags --all
+git describe
+git describe --tags
+git describe --tags --always
+
 autoheader
 autoconf
 

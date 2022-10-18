@@ -53,6 +53,7 @@ jobs:
             --artefacts-dir "$GITHUB_WORKSPACE/conda-artefacts" \
             --conda-build-image "$CONDA_IMAGE" \
             --build-channel "$WSI_CONDA_CHANNEL" \
+            --debug \
             --verbose
 
           kill %1

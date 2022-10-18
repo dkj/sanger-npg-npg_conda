@@ -4,6 +4,11 @@ set -ex
 
 n="$CPU_COUNT"
 
+git fetch --tags --all
+git describe
+git describe --tags
+git describe --tags --always
+
 autoheader
 autoconf
 

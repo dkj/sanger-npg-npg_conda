@@ -47,6 +47,7 @@ outputs:
       run:
         - libhts =={{ htslib_version }}
         - libz
+        - gdb
     files:
       - bin/ace2sam
       - bin/maq2sam-*
@@ -62,4 +63,5 @@ outputs:
     test:
       commands:
         - echo -e '@HD\tVN:1.0\tSO:unsorted' | samtools view
+        - gdb -ex run -ex bt -batch -args $(which samtools) version
         - samtools --version
